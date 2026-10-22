@@ -2,16 +2,19 @@ const crypto = require("crypto");
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const Task = require("./models/Task");
+const Task = require("./models/task");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/todoapp")
-  .then(() => console.log("✅ MongoDB connected"))
-  .catch(err => console.error("❌ Connection error:", err));
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => console.log("Connected to MongoDB Atlas"))
+.catch(err => console.error("MongoDB connection error:", err));
 
 // Routes
 app.get("/tasks", async (req, res) => {
