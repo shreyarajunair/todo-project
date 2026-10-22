@@ -4,6 +4,8 @@ import TodoList from "./components/TodoList";
 import TodoForm from "./components/TodoForm";
 import "./App.css";
 
+axios.defaults.baseURL = "https://todo-project-e5k6.onrender.com";
+
 function App() {
   const [tasks, setTasks] = useState([]);
 
