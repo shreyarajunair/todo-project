@@ -68,3 +68,52 @@
   border: 1px solid #ccc;
   border-radius: 6px;
 }
+/* 📱 Mobile responsiveness */
+@media (max-width: 768px) {
+  .task-item {
+    flex-direction: column;       /* Stack items vertically */
+    align-items: flex-start;      /* Align to left */
+    padding: 10px;
+  }
+
+  .task-title {
+    margin: 8px 0;                /* Space between title and buttons */
+    font-size: 1rem;
+  }
+
+  .task-date {
+    margin: 5px 0;
+    font-size: 0.85rem;
+  }
+
+  .task-actions {
+    width: 100%;                  /* Buttons stretch across */
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+
+  .btn {
+    flex: 1;                      /* Buttons share equal width */
+    margin: 0 4px;
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .edit-input {
+    width: 100%;                  /* Input spans full width */
+    margin: 5px 0;
+  }
+}
+
+/* Extra small screens (phones under 480px) */
+@media (max-width: 480px) {
+  .task-title {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+}
+
